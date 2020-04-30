@@ -1,0 +1,27 @@
+<style>
+    header{
+        background : yellow;
+        padding : 30px;
+        margin : 0;
+    }
+    div{
+        background : blue;
+        display: inline-block;
+        float : left;
+    }
+    footer{
+        background : green;
+        padding : 30px;        
+    }
+    section{
+        background : pink;
+        padding : 30px;
+    }
+   li{
+        background : white;
+        cursor : pointer;
+        float : right;
+        margin : 1px;
+        list-style-type : none;
+    }
+</style>
