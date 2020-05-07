@@ -1,11 +1,15 @@
 <style>
+
+    body{
+        background : burlywood; 
+    }
     header{
         background : yellow;
         padding : 30px;
         margin : 0;
     }
     div{
-        background : blue;
+        background : burlywood;
         display: inline-block;
         float : left;
     }
