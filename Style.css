@@ -21,11 +21,18 @@
         background : pink;
         padding : 30px;
     }
-   li{
+    side li{
         background : white;
         cursor : pointer;
         float : right;
-        margin : 1px;
+        margin : 10px;
         list-style-type : none;
+        border-radius: 3px;
+    }
+    li:hover{
+        background-color : green;
+    }
+    head li{
+        background : red;
     }
 </style>
