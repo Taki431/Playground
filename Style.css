@@ -21,18 +21,23 @@
         background : pink;
         padding : 30px;
     }
-    side li{
+    li.side {
         background : white;
         cursor : pointer;
         float : right;
         margin : 10px;
         list-style-type : none;
         border-radius: 3px;
+        text-decoration: none;
     }
-    li:hover{
+    li.side:hover{
         background-color : green;
     }
-    head li{
-        background : red;
+    li.head {
+        list-style-type : none;
+        font-family: sans-serif;
+    }
+    redText{
+        color : red;
     }
 </style>
