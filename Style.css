@@ -1,5 +1,4 @@
 <style>
-
     body{
         background : burlywood; 
     }
@@ -22,22 +21,29 @@
         padding : 30px;
     }
     li.side {
-        background : white;
+       /* background : brown;*/ 
         cursor : pointer;
         float : right;
         margin : 10px;
         list-style-type : none;
         border-radius: 3px;
-        text-decoration: none;
     }
     li.side:hover{
-        background-color : green;
+        background-color : white;
     }
-    li.head {
+    a{
         list-style-type : none;
+        text-decoration: none; 
+    }
+    li.head{
+        list-style-type : none;
+    }
+    div1{
+        color : green;
         font-family: sans-serif;
     }
-    redText{
+    div2{
         color : red;
+        font-family: Lucida Sans;
     }
 </style>
