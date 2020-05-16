@@ -7,11 +7,6 @@
         padding : 30px;
         margin : 0;
     }
-    div{
-        background : burlywood;
-        display: inline-block;
-        float : left;
-    }
     footer{
         background : green;
         padding : 30px;        
@@ -20,30 +15,43 @@
         background : pink;
         padding : 30px;
     }
-    li.side {
+    .topnav a.side {
        /* background : brown;*/ 
         cursor : pointer;
         float : right;
         margin : 10px;
         list-style-type : none;
         border-radius: 3px;
+        position: relative;
+        left : -10px;
+        right : -30px;
+        font-family : Comic Sans MS;
     }
-    li.side:hover{
+    .topnav a:hover{
         background-color : white;
     }
-    a{
+    .topnav a{
         list-style-type : none;
         text-decoration: none; 
     }
-    li.head{
+    .topnav a.head {
         list-style-type : none;
+        font-size : 30px;
     }
-    div1{
+    .topnav div1{
         color : green;
+        font-family: Comic Sans MS;
+    }
+    .topnav div2{
+        color : red;
         font-family: sans-serif;
     }
-    div2{
-        color : red;
-        font-family: Lucida Sans;
+    .topnav input[type=text] {
+        font-size : 20px;
+        padding : 5px;
+        border : none;
+        text-align : left;
+        width : 400px;
     }
+
 </style>
