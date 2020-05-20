@@ -11,10 +11,7 @@
         background : green;
         padding : 30px;        
     }
-    section{
-        background : pink;
-        padding : 30px;
-    }
+
     .topnav a.side {
        /* background : brown;*/ 
         cursor : pointer;
@@ -86,5 +83,32 @@
         right : 110px;
         text-indent : -999999999px;
         top : 50px;
+    }
+
+    section{
+        background : pink;
+        padding : 30px;
+        box-sizing : border-box;
+    }
+
+/* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    .column{
+        float : left;
+        width : 33.33%;
+        padding : 10px;
+    }
+
+    .left, .right{
+        width : 25%;
+    }
+
+    .middle{
+        width : 25%;
     }
 </style>
