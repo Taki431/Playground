@@ -92,23 +92,19 @@
     }
 
 /* Clear floats after the columns */
-    .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    }
-
-    .column{
+    .column-left{
         float : left;
         width : 33.33%;
-        padding : 10px;
     }
 
-    .left, .right{
-        width : 25%;
+    .column-center{
+        display : inline-block;
+        width : 33.33%;
     }
 
-    .middle{
-        width : 25%;
+    .column-right{
+        float : right;
+        width : 33.33%;
     }
+
 </style>
