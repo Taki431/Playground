@@ -86,11 +86,18 @@
     }
 
     .button {
-        right : 10px;
-        position: absolute;
+        background-color: #4CAF50;
+        border : none;
         display : inline-block;
-        margin : 4px 2px;
         padding : 25px 32px;
+        margin : 4px 2px;
+        cursor : pointer;
+        float : right;
+        position : relative;
+        right : -100px;
+    }
+    .button1{
+        float : right;
     }
     .section-head {
         background-color : blue;
