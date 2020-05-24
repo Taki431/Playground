@@ -1,6 +1,6 @@
 <style>
     body{
-        background : burlywood; 
+        background-color: #80ced6 !important;
     }
     header{
         background : yellow;
@@ -85,26 +85,36 @@
         top : 50px;
     }
 
-    section{
-        background : pink;
-        padding : 30px;
-        box-sizing : border-box;
+    .button {
+        right : 10px;
+        position: absolute;
+        display : inline-block;
+        margin : 4px 2px;
+        padding : 25px 32px;
     }
-
+    .section-head {
+        background-color : blue;
+        color : red;
+        padding : 10% ;
+    }
+    
 /* Clear floats after the columns */
     .column-left{
         float : left;
         width : 33.33%;
+        background : pink; 
     }
 
     .column-center{
         display : inline-block;
         width : 33.33%;
+        background : pink;
     }
 
     .column-right{
         float : right;
         width : 33.33%;
+        background : pink;
     }
 
 </style>
