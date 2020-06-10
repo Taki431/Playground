@@ -218,9 +218,33 @@
  /* Friends.html */   
     .Friend-list{
         background-color : palevioletred;
+        padding : 50px;
+        position : relative;
     }
     .FButton {
         color : black;
+        border : none;
+        background-color: palevioletred;
+    }
 
+    .FButton:hover {
+        color : green;
+    }
+
+    .FButton:focus{
+        text-decoration: none;
+        border-bottom: 5px solid green;
+    }
+
+    .Friend-list input[type=text]{
+        position : absolute;
+        top : 70px;
+        left : 70px;
+    }
+
+    .profile {
+        position : absolute;
+        background-color : blue;
+        top : 100px;
     }
 </style>
