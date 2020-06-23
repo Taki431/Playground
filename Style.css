@@ -220,6 +220,8 @@
         background-color : palevioletred;
         padding : 50px;
         position : relative;
+        justify-content: flex-start;
+        flex-direction : column; 
     }
     .FButton {
         color : black;
@@ -238,13 +240,20 @@
 
     .Friend-list input[type=text]{
         position : absolute;
-        top : 70px;
+        top : 80px;
         left : 70px;
     }
 
     .profile {
         position : absolute;
         background-color : blue;
-        top : 100px;
+        top : 105px;
+
     }
+
+    i{flex:0 25px;color:#fff;line-height:50px;}
+    i:nth-child(1){background:red;}
+    i:nth-child(2){background:green;}
+    i:nth-child(3){background:blue;}
+    div+div{flex-direction:column;}    
 </style>
