@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const HomeScreen = ( {navigation} ) => {
+const TalkScreen = ( {navigation} ) => {
 
     return (
       <View style={styles.mainView}>
-        <Text>Home Screen</Text>
+        <Text>Talk Screen</Text>
         <TouchableOpacity
           style = {styles.touchableView}
           onPress={() => {
@@ -49,15 +49,22 @@ const HomeScreen = ( {navigation} ) => {
 
 const styles = StyleSheet.create({
   mainView: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    //flex: 1,
+    display: "flex",
+    flexDirection: "row-reverse",
+    //flexWrap: "wrap",
+    //alignContent: "space-between",
+    //alignItems: "center",
+    justifyContent: "flex-end",
   },
 
   touchableView :{
     marginBottom: 30,
     width :150,
     height : 50,
+    //display: "flex",
+    //flexWrap: "wrap",
+    //alignContent: "space-between",    
     alignItems : 'center',
     backgroundColor : 'orange',
     borderWidth : 5,
@@ -73,4 +80,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HomeScreen;
+export default TalkScreen;
