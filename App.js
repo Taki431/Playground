@@ -7,6 +7,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import TalkScreen from "./src/screens/TalkScreen";
+import MateScreen from "./src/screens/MateScreen";
+import PlayScreen from "./src/screens/PlayScreen";
 import DetailsScreen from "./src/screens/DetailsScreen";
 import ImageScreen from "./src/screens/ImageScreen";
 
@@ -16,7 +18,7 @@ const Tab = createBottomTabNavigator();
 function TalkStack() {
   return (
     <Stack.Navigator
-      initialRouteName="App_to_Home"
+      initialRouteName="App_to_Talk"
       screenOptions={
         {
           headerTintColor: 'white',
@@ -24,34 +26,69 @@ function TalkStack() {
         }
       }>
       <Stack.Screen
-        name="App_to_Home"
+        name="App_to_Talk"
         component={TalkScreen}
         options={{
-          title: "Movie Time",
+          title: "Talk",
           headerTitleStyle: {
             fontWeight: 'bold',
             fontSize: 30
           }
         }}
       />
+    </Stack.Navigator>
+  );
+}
+
+function MateStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="App_to_Mate"
+      screenOptions={
+        {
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }
+      }>
       <Stack.Screen
-        name="Home_to_Details"
-        component={DetailsScreen}
-        options={ ( {route}) => ({title: route.params.movie.title})}
-      />
-      <Stack.Screen
-        name="Details_to_Details"
-        component={DetailsScreen}
-        options={ ( {route}) => ({title: route.params.movie.title})}
-      />
-      <Stack.Screen
-        name="BigImageView"
-        component={ImageScreen}
+        name="App_to_Mate"
+        component={MateScreen}
+        options={{
+          title: "Mate",
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30
+          }
+        }}
       />
     </Stack.Navigator>
   );
 }
 
+function PlayStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="App_to_Mate"
+      screenOptions={
+        {
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }
+      }>
+      <Stack.Screen
+        name="App_to_Mate"
+        component={PlayScreen}
+        options={{
+          title: "Mate",
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30
+          }
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 export default function App() {
   return (
     <NavigationContainer>
@@ -72,17 +109,17 @@ export default function App() {
           />
         <Tab.Screen
           name="Playground"
-          component={TalkStack}
+          component={PlayStack}
           options={{
             tabBarLabel: 'Playground',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name= "playground-slide" color = {color} size = {size} /> 
+              <MaterialCommunityIcons name= "ticket" color = {color} size = {size} /> 
             ),
           }}
         />
         <Tab.Screen
           name="Mates"
-          component={TalkStack}
+          component={MateStack}
           options={{
             tabBarLabel: 'Mates',
             tabBarIcon: ({ color, size }) => (

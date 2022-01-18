@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const TalkScreen = ( {navigation} ) => {
+const MateScreen = ( {navigation} ) => {
 
     return (
       <View style={styles.mainView}>
-        <Text style = {styles.textstyle}>Talk Screen</Text>
+        <Text style = {styles.textstyle}>Mate Screen</Text>
       </View>
     )
 };
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TalkScreen;
+export default MateScreen;
