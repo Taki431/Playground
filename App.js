@@ -9,8 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TalkScreen from "./src/screens/TalkScreen";
 import MateScreen from "./src/screens/MateScreen";
 import PlayScreen from "./src/screens/PlayScreen";
-import DetailsScreen from "./src/screens/DetailsScreen";
-import ImageScreen from "./src/screens/ImageScreen";
+import DatingScreen from "./src/screens/DatingScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator(); 
@@ -21,6 +20,7 @@ function TalkStack() {
       initialRouteName="App_to_Talk"
       screenOptions={
         {
+          headerShown: false,
           headerTintColor: 'white',
           headerStyle: {backgroundColor: 'orange'}
         }
@@ -46,6 +46,7 @@ function MateStack() {
       initialRouteName="App_to_Mate"
       screenOptions={
         {
+          headerShown: false,
           headerTintColor: 'white',
           headerStyle: {backgroundColor: 'orange'}
         }
@@ -71,6 +72,7 @@ function PlayStack() {
       initialRouteName="App_to_Mate"
       screenOptions={
         {
+          headerShown: false,
           headerTintColor: 'white',
           headerStyle: {backgroundColor: 'orange'}
         }
@@ -89,6 +91,33 @@ function PlayStack() {
     </Stack.Navigator>
   );
 }
+
+function DatingStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="App_to_Mate"
+      screenOptions={
+        {
+          headerShown: false,
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }
+      }>
+      <Stack.Screen
+        name="App_to_Mate"
+        component={DatingScreen}
+        options={{
+          title: "Dating",
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30
+          }
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -127,6 +156,16 @@ export default function App() {
             ),
           }}
         />
+        <Tab.Screen
+          name = "Dating" 
+          component={DatingStack}
+          options={{
+            tabBarLabel: 'Dating',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="human-male-female" color = {color} size = {size} /> 
+            ),
+          }}
+        />        
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -139,4 +178,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  textstyle: {
+    fontSize: 25,
+    textAlign: 'center',
+    marginBottom: 16,
+  },  
 });
