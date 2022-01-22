@@ -26,24 +26,53 @@ const DatingScreen = ( {navigation} ) => {
           </TouchableOpacity>
         </View>
         <View style={styles.container2}>
-            <View style={[styles.mid_box, styles.pbox]}>
+          <TouchableOpacity
+            style = {[styles.mid_box, styles.pbox]}
+            onPress={() =>{
+              navigation.navigate("Dating_to_Profiles")
+            }}>
+            <View>
                <Text style = {styles.textstyle}>1st Introduced Profile</Text>
             </View>
-            <View style={[styles.mid_box, styles.pbox]}>
-                <Text style = {styles.textstyle}>2nd Introduced Profile</Text>
+          </TouchableOpacity> 
+          <TouchableOpacity
+            style = {[styles.mid_box, styles.pbox]}
+            onPress={() =>{
+              navigation.navigate("Dating_to_Profiles")
+            }}>
+            <View>
+               <Text style = {styles.textstyle}>2nd Introduced Profile</Text>
             </View>
-            <View style={[styles.mid_box, styles.pbox]}>
-                <Text style = {styles.textstyle}>3rd Introduced Profile</Text>
+          </TouchableOpacity> 
+          <TouchableOpacity
+            style = {[styles.mid_box, styles.pbox]}
+            onPress={() =>{
+              navigation.navigate("Dating_to_Profiles")
+            }}>
+            <View>
+               <Text style = {styles.textstyle}>3rd Introduced Profile</Text>
             </View>
-            <View style={[styles.mid_box, styles.pbox]}>
-                <Text style = {styles.textstyle}>4th Introduced Profile</Text>  
-            </View>            
+          </TouchableOpacity> 
+          <TouchableOpacity
+            style = {[styles.mid_box, styles.pbox]}
+            onPress={() =>{
+              navigation.navigate("Dating_to_Profiles")
+            }}>
+            <View>
+               <Text style = {styles.textstyle}>4th Introduced Profile</Text>
+            </View>
+          </TouchableOpacity>            
         </View>
         <View style={styles.container3}>
-            <View style={[styles.box, styles.more]}>
+        <TouchableOpacity
+            style = {[styles.box, styles.more]}
+            onPress={() =>{
+              navigation.navigate("Dating_to_More")
+            }}>
+            <View>
                 <Text style = {styles.textstyle}>Introduce me more!</Text>
             </View>
-
+          </TouchableOpacity>
         </View>        
       </View>
     );
