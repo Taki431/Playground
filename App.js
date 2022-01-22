@@ -10,6 +10,8 @@ import TalkScreen from "./src/screens/TalkScreen";
 import MateScreen from "./src/screens/MateScreen";
 import PlayScreen from "./src/screens/PlayScreen";
 import DatingScreen from "./src/screens/DatingScreen";
+import MyProfileScreen from "./src/screens/MyProfileScreen";
+import PurchaseScreen from "./src/screens/Purchase";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator(); 
@@ -114,6 +116,28 @@ function DatingStack() {
           }
         }}
       />
+      <Stack.Screen
+        name="Dating_to_MyProfile"
+        component={MyProfileScreen}
+        options={{
+          title: "My Profile",
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30
+          }
+        }}
+      />      
+      <Stack.Screen
+        name="Dating_to_Purchase"
+        component={PurchaseScreen}
+        options={{
+          title: "Purchase",
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30
+          }
+        }}
+      />            
     </Stack.Navigator>
   );
 }

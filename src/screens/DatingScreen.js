@@ -6,17 +6,43 @@ const DatingScreen = ( {navigation} ) => {
     return (
       <View style={styles.wrapper}>
         <View style={styles.container}>
-            <View style={[styles.upper_box, styles.mypic]}></View>
-            <View style={[styles.upper_box, styles.bonus]}></View>
+        <TouchableOpacity
+            style = {[styles.upper_box, styles.mypic]}
+            onPress={() =>{
+              navigation.navigate("Dating_to_MyProfile")
+            }}>
+            <View style> 
+              <Text style = {styles.textstyle}>My Profile Pic</Text>
+            </View>
+          </TouchableOpacity>   
+          <TouchableOpacity
+            style = {[styles.upper_box, styles.bonus]}
+            onPress={() =>{
+              navigation.navigate("Dating_to_Purchase")
+            }}>
+            <View>
+              <Text style = {styles.textstyle}>Ddakji for Purchase </Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.container2}>
-            <View style={[styles.mid_box, styles.pbox]}></View>
-            <View style={[styles.mid_box, styles.pbox]}></View>
-            <View style={[styles.mid_box, styles.pbox]}></View>
-            <View style={[styles.mid_box, styles.pbox]}></View>            
+            <View style={[styles.mid_box, styles.pbox]}>
+               <Text style = {styles.textstyle}>1st Introduced Profile</Text>
+            </View>
+            <View style={[styles.mid_box, styles.pbox]}>
+                <Text style = {styles.textstyle}>2nd Introduced Profile</Text>
+            </View>
+            <View style={[styles.mid_box, styles.pbox]}>
+                <Text style = {styles.textstyle}>3rd Introduced Profile</Text>
+            </View>
+            <View style={[styles.mid_box, styles.pbox]}>
+                <Text style = {styles.textstyle}>4th Introduced Profile</Text>  
+            </View>            
         </View>
         <View style={styles.container3}>
-            <View style={[styles.box, styles.more]}></View>
+            <View style={[styles.box, styles.more]}>
+                <Text style = {styles.textstyle}>Introduce me more!</Text>
+            </View>
 
         </View>        
       </View>
@@ -111,15 +137,21 @@ const styles = StyleSheet.create({
 
   touchableView :{
     marginBottom: 30,
-    width :150,
+    width :100,
     height : 50,
     //display: "flex",
     //flexWrap: "wrap",
     //alignContent: "space-between",    
     alignItems : 'center',
     backgroundColor : 'orange',
-    borderWidth : 5,
+    borderWidth : 1,
     borderRadius: 10
+  },
+
+  textstyle: {
+    fontSize: 12,
+    textAlign: 'center',
+    marginBottom: 16,
   },
 
   touchableText :{
