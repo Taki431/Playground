@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+//import {test} from "./db/routes.js";
 
 const DatingScreen = ( {navigation} ) => {
 
@@ -29,6 +30,7 @@ const DatingScreen = ( {navigation} ) => {
           <TouchableOpacity
             style = {[styles.mid_box, styles.pbox]}
             onPress={() =>{
+              //test();
               navigation.navigate("Dating_to_Profiles")
             }}>
             <View>
