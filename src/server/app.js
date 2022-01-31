@@ -26,4 +26,4 @@ app.use(router);
 sequelize.sync(); 
 debugger;
 console.log("reached here!");
-app.listen(3000);
+app.listen(3000,'0.0.0.0');

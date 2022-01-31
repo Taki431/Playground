@@ -14,6 +14,7 @@ import MyProfileScreen from "./src/screens/MyProfileScreen";
 import PurchaseScreen from "./src/screens/Purchase";
 import ProfilesScreen from "./src/screens/ProfilesScreen";
 import MoreScreen from "./src/screens/MoreScreen";
+import AuthScreen from "./src/screens/AuthScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator(); 
@@ -169,6 +170,12 @@ function DatingStack() {
 export default function App() {
   return (
     <NavigationContainer>
+      <Stack.Navigator initialRouteName="Auth">
+        <Stack.Screen name="Auth" component={AuthScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+/*
+    <NavigationContainer>
       <Tab.Navigator 
         initialRouteName = "Feed"
         screenOptions={{
@@ -216,6 +223,7 @@ export default function App() {
         />        
       </Tab.Navigator>
     </NavigationContainer>
+    */
   );
 }
 

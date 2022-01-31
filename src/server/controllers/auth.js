@@ -11,7 +11,7 @@ const signup = (req, res, next) => {
     }})
     .then(dbUser => {
         if (dbUser) {
-            return res.status(409).json({message: "email already exists"});
+            return res.status(409).json({message: "phone_number already exists"});
         } else if (req.query.phone_number && req.query.password) {
             // password hash
             bcrypt.hash(req.query.password, 12, (err, passwordHash) => {
@@ -37,7 +37,7 @@ const signup = (req, res, next) => {
         } else if (!req.body.password) {
             return res.status(400).json({message: "password not provided"});
         } else if (!req.body.phone_number) {
-            return res.status(400).json({message: "email not provided"});
+            return res.status(400).json({message: "phone_number not provided"});
         };
     })
     .catch(err => {
@@ -46,20 +46,22 @@ const signup = (req, res, next) => {
 };
 
 const login = (req, res, next) => {
-    // checks if email exists
+    // checks if phone_number exists
+    debugger;
+    //console.log(req)
     User.findOne({ where : {
-        email: req.query.email, 
+        phone_number: req.body.phone_number, 
     }})
     .then(dbUser => {
         if (!dbUser) {
             return res.status(404).json({message: "user not found"});
         } else {
             // password hash
-            bcrypt.compare(req.query.password, dbUser.password, (err, compareRes) => {
+            bcrypt.compare(req.body.password, dbUser.password, (err, compareRes) => {
                 if (err) { // error while comparing
                     res.status(502).json({message: "error while checking user password"});
                 } else if (compareRes) { // password match
-                    const token = jwt.sign({ email: req.query.email }, 'secret', { expiresIn: '1h' });
+                    const token = jwt.sign({ phone_number: req.query.phone_number }, 'secret', { expiresIn: '1h' });
                     res.status(200).json({message: "user logged in", "token": token});
                 } else { // password doesnt match
                     res.status(401).json({message: "invalid credentials"});
