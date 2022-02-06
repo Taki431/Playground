@@ -4,7 +4,7 @@ import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, P
 //const API_URL = Platform.OS === 'android' ? 'http://localhost:5000' : 'http://10.0.2.2:5000';
 const API_URL =  'http://10.0.2.2:3000';
 
-const AuthScreen = () => {
+const AuthScreen = ({navigation}) => {
 
     const [phone_number, setPhoneNumber] = useState('');
     const [name, setName] = useState('');
@@ -64,6 +64,8 @@ const AuthScreen = () => {
                 } else {
                     onLoggedIn(jsonRes.token);
                     setIsError(false);
+                    console.log("Here!");
+                    navigation.navigate('Dating');
                     setMessage(jsonRes.message);
                 }
             } catch (err) {
