@@ -13,6 +13,43 @@ import AuthScreen from "../src/screens/AuthScreen";
 
 const Stack = createStackNavigator();
 
+function AuthStackNavigator() {
+    return (
+    <Stack.Navigator      
+      initialRouteName="App_to_Auth"
+      screenOptions={
+        {
+          headerShown: false,
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'orange'}
+        }
+      }>
+    <Stack.Screen
+      name="App_to_Auth"
+      component={AuthScreen}
+      options={{
+        title: "Talk",
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 30
+        }
+      }}
+    />
+    <Stack.Screen
+      name="Auth_to_Mate"
+      component={DatingScreen}
+      options={{
+        title: "Talk",
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 30
+        }
+      }}
+    />    
+    </Stack.Navigator>
+    );
+}
+
 function TalkStackNavigator() {
     return (
       <Stack.Navigator
@@ -161,4 +198,4 @@ function DatingStackNavigator() {
   );
 }
 
-export { TalkStackNavigator, MateStackNavigator, PlayStackNavigator, DatingStackNavigator}
+export { TalkStackNavigator, MateStackNavigator, PlayStackNavigator, DatingStackNavigator, AuthStackNavigator}

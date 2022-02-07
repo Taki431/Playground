@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, Platform } from 'react-native';
+import BottomTabNavigator from '../../navigation/TabNavigator';
+import { MateStackNavigator } from '../../navigation/StackNavigator';
 
 //const API_URL = Platform.OS === 'android' ? 'http://localhost:5000' : 'http://10.0.2.2:5000';
 const API_URL =  'http://10.0.2.2:3000';
 
-const AuthScreen = ({navigation}) => {
+const AuthScreen = (props) => {
+    console.log(props)
 
     const [phone_number, setPhoneNumber] = useState('');
     const [name, setName] = useState('');
@@ -13,13 +16,14 @@ const AuthScreen = ({navigation}) => {
     const [isError, setIsError] = useState(false);
     const [message, setMessage] = useState('');
     const [isLogin, setIsLogin] = useState(true);
+    const [mate, setMate] = useState(false);
 
     const onChangeHandler = () => {
         setIsLogin(!isLogin);
         setMessage('');
     };
 
-    const onLoggedIn = token => {
+    const onLoggedIn = async(token) => {
         fetch(`${API_URL}/private`, {
             method: 'GET',
             headers: {
@@ -31,6 +35,11 @@ const AuthScreen = ({navigation}) => {
             try {
                 const jsonRes = await res.json();
                 if (res.status === 200) {
+                    // setMessage(jsonRes.message);
+                    setIsError(false);
+                    console.log("Here!");                    
+                    // setMate(true);
+                    props.navigation.navigate("BottomTab");
                     setMessage(jsonRes.message);
                 }
             } catch (err) {
@@ -63,10 +72,11 @@ const AuthScreen = ({navigation}) => {
                     setMessage(jsonRes.message);
                 } else {
                     onLoggedIn(jsonRes.token);
-                    setIsError(false);
-                    console.log("Here!");
-                    navigation.navigate('Dating');
-                    setMessage(jsonRes.message);
+                    // setIsError(false);
+                    // console.log("Here!");                    
+                    // setMate(true);
+                
+                    // setMessage(jsonRes.message);
                 }
             } catch (err) {
                 console.log(err);
@@ -76,6 +86,7 @@ const AuthScreen = ({navigation}) => {
             console.log(err);
         });
     };
+
 
     const getMessage = () => {
         const status = isError ? `Error: ` : `Success: `;
@@ -98,6 +109,8 @@ const AuthScreen = ({navigation}) => {
                         <TouchableOpacity style={styles.buttonAlt} onPress={onChangeHandler}>
                             <Text style={styles.buttonAltText}>{isLogin ? 'Sign Up' : 'Log In'}</Text>
                         </TouchableOpacity>
+                   {/* {mate? <MateStackNavigator/>:null} */}
+
                     </View>    
                 </View>
             </View>

@@ -1,12 +1,23 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, StackActions } from "@react-navigation/native";
 import BottomTabNavigator from './navigation/TabNavigator';
+import { AuthStackNavigator } from './navigation/StackNavigator';
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-        <BottomTabNavigator />
+      <Stack.Navigator>
+      <Stack.Screen name="Auth" component = {AuthStackNavigator}/>        
+       <Stack.Screen
+         name="BottomTab"
+         component = {BottomTabNavigator}
+         options = {{headerShown: false}}
+       />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
@@ -23,16 +34,3 @@ export default function App() {
          <Tab.Screen name ="Bottom" component={BottomTabScreen}/>
       </Tab.Navigator>
       */
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textstyle: {
-    fontSize: 25,
-    textAlign: 'center',
-    marginBottom: 16,
-  },  
-});
